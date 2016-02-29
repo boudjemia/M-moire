@@ -1,0 +1,249 @@
+\PassOptionsToPackage{francais}{babel}
+
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{caption}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage{makeidx}
+\usepackage{lmodern}
+%\usepackage{wrapfig}
+\usepackage{float}
+%\usepackage[grey,utopia]{quotchap}   %pour le style d'affichage du chapitre
+\usepackage[centertags]{amsmath}      %pour centrer les formules mathematiques
+\usepackage{amsthm}                   %pour les formules mathematiques
+\usepackage{cite}                     %pour les cite de la biblio
+\def\baselinestretch{1}               %pour les inter ligne e 1
+%\usepackage{ulem}                    %pour souligner le chapitre
+%\usepackage[Conny]{fncychap}         %Sonny, Lenny, Glenn, Conny, Rejne, Bjarne
+%\usepackage{hyperref}%rouge
+%\usepackage[colorlinks]{hyperref}
+\usepackage{fancyhdr}
+%\usepackage{colortab}
+\usepackage{epsfig}
+\usepackage{anysize}
+%\usepackage[Bjarne]{fncychap}%englais one
+%\usepackage[Rejne]{fncychap}%choix(encdre le titre)
+%\usepackage[Sonny]{fncychap}
+%\usepackage[Conny]{fncychap}%choix2
+%\usepackage[utopia]{quotchap}
+%\usepackage[Glenn]{fncychap}%choix3
+%\usepackage[Lenny]{fncychap}% encadrer le chapitre
+\usepackage[grey,utopia]{quotchap}
+\usepackage{graphicx}
+%\usepackage[algonl,boxruled,lined, french]{algorithm2e}
+\usepackage{niceframe}
+\usepackage[a4paper]{geometry}
+%\usepackage[a4paper,left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\geometry{hscale=0.80,vscale=0.80,centering}
+\usepackage{rotating}
+\usepackage{fancybox}
+\usepackage[english,francais]{babel}
+%\selectlanguage{francais}
+%\usepackage{lipsum}
+%\usepackage{multirow}
+%\usepackage{soul}
+
+
+%Pour l'index
+\usepackage{makeidx}
+\makeindex
+
+%Pour la liste des abréviation
+\usepackage[french]{nomencl}
+\makenomenclature
+
+
+
+
+
+%****************************************************************************
+%****************************************************************************
+%							DÉBUT DU DOCUMENT			
+%****************************************************************************
+%****************************************************************************
+
+\begin{document}
+	
+%****************************************************************************
+%					   	 Ajout de la page de garde
+%****************************************************************************	
+
+\include{pagedegarde/Pagedegarde}
+
+
+%****************************************************************************
+%						   Ajout des remerciment
+%****************************************************************************
+
+%\thispagestyle{empty}
+%\include{remerciement}
+
+
+\thispagestyle{empty}
+\pagenumbering{roman}
+
+%****************************************************************************
+%				Configuration de la Table des Matières
+%****************************************************************************
+
+\renewcommand{\contentsname}{Table des Matières}
+\addcontentsline{toc}{chapter}{Table des Matières} %
+\rhead{\itshape\bf{\emph{Table des Matières}}} \pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\lhead{\emph{}} \tableofcontents
+
+\newpage
+
+
+%****************************************************************************
+%				Configuration de la Table des Figures
+%****************************************************************************
+
+
+\renewcommand{\contentsname}{Table des Figures}
+\addcontentsline{toc}{chapter}{Table des Figures} %
+\rhead{\itshape\bf{\emph{Table des Figures}}} \pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\lhead{\emph{}}\listoffigures
+
+
+\newpage
+
+
+%****************************************************************************
+%				Configuration de la Liste des Tableaux
+%****************************************************************************
+
+
+\renewcommand{\contentsname}{Liste des Tableaux}
+\addcontentsline{toc}{chapter}{Liste des Tableaux} %
+\rhead{\itshape\bf{\emph{Liste des Tableaux}}} \pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\lhead{\emph{}}\listoftables
+
+\newpage
+
+
+
+%****************************************************************************
+%					   	 Configuration des chapitres
+%****************************************************************************
+
+\thispagestyle{empty}
+\chead{}
+
+\rhead{\itshape  \leftmark}
+\lhead{}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+
+%****************************************************************************
+%			Ajout de l'introduction générale + les chapitres
+%****************************************************************************
+\thispagestyle{empty}
+\pagenumbering{arabic}
+
+\include{Introduction/introduction}
+
+\include{Chapitre1/chap1}
+
+\include{Chapitre2/chap2}
+
+\include{Chapitre3/chap3}
+
+\include{Chapitre4/chap4}
+
+
+
+%****************************************************************************
+%					  Ajout de la conclusion
+%****************************************************************************
+
+\newpage
+\include{Conclusion/conclusion}
+
+
+%****************************************************************************
+%			               Configuration de l'Annexe
+%****************************************************************************
+
+\appendix
+
+\renewcommand{\contentsname}{Annexes}
+\addcontentsline{toc}{chapter}{Annexes}
+\rhead{\itshape\bf{\emph{Annexes}}} \pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\lhead{\emph{}}
+
+\setcounter{figure}{0} 
+\setcounter{table}{0}
+\setcounter{footnote}{0}
+\setcounter{equation}{0}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1 }}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection~ #1}}
+\fancyhead[RO]{\bfseries\rightmark}
+\fancyhead[LE]{\bfseries\leftmark}
+\fancyfoot[RO]{\thepage}
+\fancyfoot[LE]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\makeatletter
+\renewcommand\thefigure{A.\arabic{figure}}
+\renewcommand\thetable{A.\arabic{table}} 
+\makeatother
+
+
+%****************************************************************************
+%				       Affichage de l'Annexe
+%****************************************************************************
+\include{Annexes/annexe}
+
+
+
+%****************************************************************************
+%				       Affichage de l'index
+%****************************************************************************
+
+\printindex
+
+
+
+%****************************************************************************
+%		  	     Affichage la liste des abréviation
+%****************************************************************************
+
+\printnomenclature
+
+
+
+
+%****************************************************************************
+%				     Ajout de la Bibliographie
+%****************************************************************************
+
+\bibliographystyle{ieeetr}
+\bibliography{Biblio/bibliographie.bib}
+
+
+
+%****************************************************************************
+%				    	 Ajout du résumé
+%****************************************************************************
+
+\newpage
+\include{Resume/resume}
+
+\end{document}
