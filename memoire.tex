@@ -127,7 +127,25 @@
 \lhead{\emph{}}\listoftables
 
 \newpage
+%****************************************************************************
+%				Configuration de la Liste des abbréviations
+%****************************************************************************
+%Options -> Configurer Texmaker -> Commandes : remplacer la commande Makeindex par
+%makeindex %.nlo -s nomencl.ist -o %.nls -t %.nlg 
+%Compiler 1fois avec pdflatex ou latex apres 1 fois makeindex et 1 fois avec pdflatex ou latex
 
+\renewcommand{\contentsname}{}
+\addcontentsline{toc}{chapter}{Liste des Abréviations} %
+\rhead{\itshape\bf{\emph{}}} \pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\lhead{\emph{}}\listoftables
+\renewcommand{\nomname}{Liste des Abréviations}
+\printnomenclature
+\nomenclature{$GL$}{Génie Logiciel}
+\nomenclature{$ASR$}{Administration et Sécurité des réseaux}
+\nomenclature{$OM$}{Omar Mawloud}
+\newpage
 
 
 %****************************************************************************
